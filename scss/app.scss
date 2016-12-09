@@ -89,6 +89,10 @@
 // Older IE support
 // @import "vendor/ie";
 
+.reveal-modal {
+  z-index: 1005 !important;
+}
+
 body {
   .wide {
     max-width: 100%;
