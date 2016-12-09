@@ -1,0 +1,189 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Core
+// The following imports bootstrap the theme.
+// You may comment out bourbon if you don't want to use its library of mixins.
+// The theme will have compilation errors if Foundation is not imported.
+
+// Global Zurb Foundation variable overrides.
+@import "base/init";
+
+// Comment out this import if you don't want to use normalize.
+@import "../../zurb_foundation/scss/normalize";
+
+// Comment out the imports you don't need below.
+@import "../../zurb_foundation/scss/foundation/components/grid";
+@import "../../zurb_foundation/scss/foundation/components/accordion";
+@import "../../zurb_foundation/scss/foundation/components/alert-boxes";
+@import "../../zurb_foundation/scss/foundation/components/block-grid";
+@import "../../zurb_foundation/scss/foundation/components/breadcrumbs";
+@import "../../zurb_foundation/scss/foundation/components/button-groups";
+@import "../../zurb_foundation/scss/foundation/components/buttons";
+@import "../../zurb_foundation/scss/foundation/components/clearing";
+@import "../../zurb_foundation/scss/foundation/components/dropdown";
+@import "../../zurb_foundation/scss/foundation/components/dropdown-buttons";
+@import "../../zurb_foundation/scss/foundation/components/flex-video";
+@import "../../zurb_foundation/scss/foundation/components/forms";
+@import "../../zurb_foundation/scss/foundation/components/icon-bar";
+@import "../../zurb_foundation/scss/foundation/components/inline-lists";
+@import "../../zurb_foundation/scss/foundation/components/joyride";
+@import "../../zurb_foundation/scss/foundation/components/keystrokes";
+@import "../../zurb_foundation/scss/foundation/components/labels";
+@import "../../zurb_foundation/scss/foundation/components/magellan";
+@import "../../zurb_foundation/scss/foundation/components/orbit";
+@import "../../zurb_foundation/scss/foundation/components/pagination";
+@import "../../zurb_foundation/scss/foundation/components/panels";
+@import "../../zurb_foundation/scss/foundation/components/pricing-tables";
+@import "../../zurb_foundation/scss/foundation/components/progress-bars";
+@import "../../zurb_foundation/scss/foundation/components/range-slider";
+@import "../../zurb_foundation/scss/foundation/components/reveal";
+@import "../../zurb_foundation/scss/foundation/components/side-nav";
+@import "../../zurb_foundation/scss/foundation/components/split-buttons";
+@import "../../zurb_foundation/scss/foundation/components/sub-nav";
+@import "../../zurb_foundation/scss/foundation/components/switches";
+@import "../../zurb_foundation/scss/foundation/components/tables";
+@import "../../zurb_foundation/scss/foundation/components/tabs";
+@import "../../zurb_foundation/scss/foundation/components/thumbs";
+@import "../../zurb_foundation/scss/foundation/components/tooltips";
+@import "../../zurb_foundation/scss/foundation/components/top-bar";
+@import "../../zurb_foundation/scss/foundation/components/type";
+@import "../../zurb_foundation/scss/foundation/components/offcanvas";
+@import "../../zurb_foundation/scss/foundation/components/visibility";
+
+
+// Import our mixins early so they can be used by other partials.
+// Optional.
+//@import "base/mixins";
+
+// Common file is where you place common utility classes to extend or
+// parametrics.
+// Optional.
+// @import "base/common";
+
+// Fix for some Drupal CSS quirks (Drupalisms).
+@import "base/drupal";
+
+// Styling for elements.
+// Optional.
+// @import "base/elements";
+
+// Layout
+// Each section of the document has it's own partial seperated out to improve
+// developer experience. Additionally, grids can be declared in layouts as well.
+@import "layout/header";
+@import "layout/main";
+@import "layout/aside";
+@import "layout/footer";
+
+// Modules
+// @import "modules/block";
+// @import "modules/button";
+
+// States
+// @import "states/collapse";
+
+// Themes
+// @import "theme/button-light";
+
+// Older IE support
+// @import "vendor/ie";
+
+body {
+  .wide {
+    max-width: 100%;
+  }
+
+  .top-bar {
+    box-shadow: 0px 5px 10px rgba(0,0,0,.4);
+    z-index: 1;
+
+    img.logo {
+      margin-left: 1rem;
+      margin-top: .5rem;
+      margin-right: .5rem;
+    }
+
+    .phones {
+      display: block;
+      float: right;
+      font-size: rem-calc(20);
+      font-weight: bold;
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+
+    .top-bar-section li:not(.has-form) a:not(.button) {
+      text-transform: uppercase;
+    }
+  }
+
+  main {
+    h1#page-title {
+      text-align: center;
+    }
+
+    .round {
+      border-radius: 50%;
+    }
+
+    .grid-masonry-item {
+      margin-bottom: 10px;
+    }
+
+    .landing-block {
+      padding: 100px 0;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .landing-cover {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+
+    .our-advantages-bg {
+      background-image: url('../images/bg_our_advantages.jpg');
+    }
+
+    .view-services {
+      img {
+        @extend .round;
+
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  footer {
+    .l-footer {
+      padding-top: 3rem;
+    }
+  }
+
+  &.front {
+    ul.frontpage-slideshow {
+      li {
+        background-size: cover;
+        background-position: 50% 50%;
+
+        .slide-text-wrapper {
+          img {
+            margin: 0 auto;
+            padding: 2rem 0;
+          }
+
+          h2 {
+            text-align: center;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}
