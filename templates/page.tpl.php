@@ -21,7 +21,7 @@
               <div class="phones text-right hide-for-small">
                 <a href="tel:88005007250">8 800 500-72-50</a><br>
                 <a href="tel:+74952110182">+7 495 211-01-82</a>
-                <!-- <a href="/node/10?width=300&amp;height=210" class="callback-button colorbox-node init-colorbox-node-processed-processed">Обратный звонок</a> -->
+                <?php /* <a href="/node/10?width=300&amp;height=210" class="callback-button colorbox-node init-colorbox-node-processed-processed">Обратный звонок</a> */ ?>
               </div>
             </li>
             <li class="toggle-topbar menu-icon">
@@ -85,6 +85,17 @@
       </section>
       <!--/.l-help -->
     <?php endif; ?>
+
+    <div class="hide-for-small"
+      <?php
+        if ( isset( $node ))
+          if ( $node->type == 'serivce' ) {
+            $img_url = file_create_url($node->field_service_cover['und'][0]['uri']);
+
+            print 'style="background-image: url(\'' . $img_url . '\'); background-size: cover; background-position: 50% 50%; height: 300px;"';
+          }
+      ?>
+    ></div>
 
     <!--.l-main -->
     <main role="main" class="row l-main">
